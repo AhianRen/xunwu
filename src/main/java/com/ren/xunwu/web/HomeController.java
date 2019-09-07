@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @Controller
-public class Page {
+public class HomeController {
     @RequestMapping("/")
     public String index(Model model){
         System.out.println("xx");
@@ -17,6 +17,13 @@ public class Page {
         return "index";
     }
 
+
+
+
+
+
+
+    //----------------测试---------------------
     @RequestMapping("/thymeleaftest")
     public String thymeleaftest(Model model){
         User user = new User();
