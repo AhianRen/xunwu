@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"><!--引入thymeleaf-->
+<head>
+    <meta charset="UTF-8">
+    <title>thymeleaftest</title>
+</head>
+<body>
+    <h2>-----------标准变量表达式-----------</h2>
+    <div th:text="${msg}"></div>
+    <div th:text="'username is ' + ${user.name} + '!'"></div>
+
+    <h2>------选择变量表达式-------</h2>
+    <p>选择变量表达式首先使用th:object来绑定后台传来的user对象，然后使用*来代表这个对象，后面{}中的值是此对象中的属性。</p>
+    <p>选择变量表达式在执行时是在选择的对象上求解，而${...}是在上下文的变量Model上求解。</p>
+
+    <div th:object="${user}">
+        <div th:text="*{id}"></div>
+        <div th:text="*{name}"></div>
+        <div th:text="${user.name}"></div>
+        <div></div>
+    </div>
+
+    <p>也可以不使用th:object进行对象的选择，而直接使用*{...}获取数据</p>
+    <div th:text="*{user.name}"></div>
+</body>
+</html>
